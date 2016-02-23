@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adduser</title>
+</head>
+<body>
+
+    <form action="." method="POST" id="">
+        {% csrf_token %}
+        username {{ form.username }}
+        p1 {{ form.password }}
+        fs_1{{ form.first_name }}
+        email {{ form.email }}
+        <input type="submit" value="submit">
+    </form>
+
+</body>
+</html>

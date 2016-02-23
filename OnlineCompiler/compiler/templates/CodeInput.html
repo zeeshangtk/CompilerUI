@@ -1,0 +1,7 @@
+<a href="/login/logout">Logout</a>
+<form action="." method="POST">
+            {% csrf_token %}
+    {{form.program}}
+<!--<textarea placeholder="Code" rows="30" cols="60"></textarea>-->
+<input type="submit" value="Run">
+</form>
