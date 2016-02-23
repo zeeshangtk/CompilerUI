@@ -14,7 +14,7 @@ services:
 
 before_script:
   - psql -c 'create database online_compiler;' -U postgres
-  - python OnlineCompiler/manage.py syncdb –migrate –noinput
+  - python OnlineCompiler/manage.py migrate
 
 script:
 - python  OnlineCompiler/manage.py test
