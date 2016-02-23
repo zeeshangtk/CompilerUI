@@ -7,3 +7,12 @@ install:
 # command to run tests
 script: nosetests
 
+services:
+– postgresql
+
+before_script:
+  - psql -c 'create database online_compiler;' -U postgres
+  - python manage.py syncdb –migrate –noinput
+
+script:
+- python manage.py test
