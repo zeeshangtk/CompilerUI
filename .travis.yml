@@ -1,16 +1,20 @@
 language: python
 python:
   - "3.5"
+
+cache: pip
+
 # command to install dependencies
 install:
   - pip install -r requirements.txt
+
 
 services:
 - postgresql
 
 before_script:
   - psql -c 'create database online_compiler;' -U postgres
-  - python manage.py syncdb –migrate –noinput
+  - python OnlineCompiler/manage.py syncdb –migrate –noinput
 
 script:
-- python manage.py test
+- python  OnlineCompiler/manage.py test
